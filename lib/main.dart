@@ -1,4 +1,6 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:my_udyog_admin/firebase_options.dart';
 import 'package:my_udyog_admin/view_models/ads_provider.dart';
 import 'package:my_udyog_admin/view_models/blogs_provider.dart';
 import 'package:my_udyog_admin/view_models/categories_provider.dart';
@@ -14,7 +16,11 @@ import 'package:my_udyog_admin/view_models/table_provider.dart';
 import 'package:my_udyog_admin/views/dashboard/admin_screen.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

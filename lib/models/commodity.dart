@@ -1,9 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Commodity {
   String id;
   String name;
   String category;
-  String createdDate;
-  String modifiedDate;
+  DateTime createdDate;
+  DateTime modifiedDate;
   bool status;
   bool isSelected;
 
@@ -16,47 +18,26 @@ class Commodity {
     required this.status,
     this.isSelected = false,
   });
-}
 
-List<Commodity> COMMODITIES = [
-  Commodity(
-    id: '2244499811',
-    name: 'Wheat',
-    category: 'Grains',
-    createdDate: '08/10/2000',
-    modifiedDate: '08/10/2000',
-    status: true,
-  ),
-  Commodity(
-    id: '2244499812',
-    name: 'Red Gram',
-    category: 'Pulses',
-    createdDate: '08/10/2000',
-    modifiedDate: '08/10/2000',
-    status: true,
-  ),
-  Commodity(
-    id: '2244499812',
-    name: 'Red Gram',
-    category: 'Pulses',
-    createdDate: '08/10/2000',
-    modifiedDate: '08/10/2000',
-    status: true,
-  ),
-  Commodity(
-    id: '2244499812',
-    name: 'Red Gram',
-    category: 'Pulses',
-    createdDate: '08/10/2000',
-    modifiedDate: '08/10/2000',
-    status: true,
-  ),
-  Commodity(
-    id: '2244499811',
-    name: 'Wheat',
-    category: 'Grains',
-    createdDate: '08/10/2000',
-    modifiedDate: '08/10/2000',
-    status: true,
-  ),
-];
+  factory Commodity.fromJson(Map<String, dynamic> json) {
+    return Commodity(
+      id: json['commodity_id'],
+      name: json['name'],
+      category: json['category_id'],
+      createdDate: json['created_at'].toDate(),
+      modifiedDate: json['modified_at'].toDate(),
+      status: json['status'],
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['commodity_id'] = this.id;
+    data['name'] = this.name;
+    data['category_id'] = this.category;
+    data['created_at'] = Timestamp.fromDate(this.createdDate);
+    data['modified_at'] = Timestamp.fromDate(this.modifiedDate);
+    data['status'] = this.status;
+    return data;
+  }
+}
