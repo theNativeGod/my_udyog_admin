@@ -45,7 +45,7 @@ class _PurchaseOrdersTableState extends State<PurchaseOrdersTable> {
             const SizedBox(
               width: 8,
             ),
-            AddCategory(text: 'Add Category'),
+            BlueButton(text: 'Add Category'),
           ],
         ),
         const SizedBox(

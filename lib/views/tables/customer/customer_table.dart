@@ -46,7 +46,7 @@ class _CustomerTableState extends State<CustomerTable> {
             const SizedBox(
               width: 8,
             ),
-            AddCategory(text: 'Add Category'),
+            BlueButton(text: 'Add Category'),
           ],
         ),
         const SizedBox(

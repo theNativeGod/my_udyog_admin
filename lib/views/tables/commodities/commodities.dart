@@ -54,7 +54,7 @@ class _CommoditiesTableState extends State<CommoditiesTable> {
                   const SizedBox(
                     width: 8,
                   ),
-                  AddCategory(text: 'Add Category'),
+                  BlueButton(text: 'Add Category'),
                 ],
               ),
               const SizedBox(

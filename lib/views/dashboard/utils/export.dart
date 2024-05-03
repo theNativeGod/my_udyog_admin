@@ -2,7 +2,7 @@ export 'nav_tile.dart';
 export 'main_screen_title.dart';
 export 'export_button.dart';
 export 'search_box.dart';
-export 'add_category_button.dart';
+export 'blue_button.dart';
 export 'checkbox_widget.dart';
 export 'switch_widget.dart';
 export 'edit_button.dart';

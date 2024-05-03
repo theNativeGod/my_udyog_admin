@@ -42,7 +42,7 @@ class _AdsTableState extends State<AdsTable> {
             const SizedBox(
               width: 8,
             ),
-            AddCategory(text: 'Add Category'),
+            BlueButton(text: 'Add Category'),
           ],
         ),
         const SizedBox(

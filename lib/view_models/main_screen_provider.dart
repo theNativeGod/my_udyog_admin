@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import '../views/dashboard/utils/export.dart';
 
 class MainScreenProvider with ChangeNotifier {
-  String _selectedScreen = 'Dashboard';
+  String _selectedScreen = 'Add Blog';
 
   get selectedScreen => _selectedScreen;
 
   get title {
-    print(_selectedScreen);
     switch (_selectedScreen) {
       case 'Categories':
         return MainScreenTitle(
@@ -40,6 +39,9 @@ class MainScreenProvider with ChangeNotifier {
           title: 'Reports',
           subTitle: ' / $_selectedScreen',
         );
+
+      case 'Add Blog':
+        return MainScreenTitle(title: 'Blog', subTitle: ' / Add Blog');
     }
 
     return MainScreenTitle(

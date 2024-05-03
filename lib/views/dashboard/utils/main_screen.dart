@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_udyog_admin/view_models/main_screen_provider.dart';
 import 'package:my_udyog_admin/view_models/table_provider.dart';
+import 'package:my_udyog_admin/views/add_blog_section.dart';
 import 'package:my_udyog_admin/views/tables/ads/ads.dart';
 import 'package:my_udyog_admin/views/tables/blogs/blogs.dart';
 import 'package:my_udyog_admin/views/tables/categories/categories_table.dart';
@@ -82,6 +83,8 @@ class _MainScreenState extends State<MainScreen> {
         return BlogsTable();
       case 'Ads Management':
         return AdsTable();
+      case 'Add Blog':
+        return AddBlogSection();
       default:
         return Text(title);
     }

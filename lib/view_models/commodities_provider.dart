@@ -25,7 +25,7 @@ class CommoditiesProvider with ChangeNotifier {
           .collection('category')
           .where('category_id', isEqualTo: com.category)
           .get();
-      print(com.category);
+      
       com.category = res.docs.first.data()['name'];
       print(com.category);
       return com;

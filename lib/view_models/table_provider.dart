@@ -84,7 +84,7 @@ final List<String> invoiceHeaderTexts = [
 
 final List<String> blogHeaderTexts = [
   'Article',
-  'Category',
+  'Created At',
   'Page Views',
   'Status',
   'Actions',
